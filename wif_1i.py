@@ -7,6 +7,7 @@ def main(ssid):
         rq.get("https://google.com")
         rq.post("https://google.com")
         print("you are connected to the network , no brute force is required")
+        input()
     except:
         a = open("pass.txt", "r")# под pass.txt, пишем словарь брута
         while True:
