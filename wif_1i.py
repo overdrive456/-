@@ -12,7 +12,11 @@ def main(ssid):
         txt = open("pass.txt", "r")
         while True:
             pas = txt.readline()
-            winwifi.WinWiFi.connect(ssid, pas)
+            try:
+                winwifi.WinWiFi.connect(ssid, pas)
+                print("password Found)
+            except:
+                print("password dont found") 
             print(pas, ssid)
             time.sleep(1)
             if not pas:
